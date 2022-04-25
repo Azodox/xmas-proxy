@@ -1,0 +1,6 @@
+{
+  "id": "xmas-proxy",
+  "name": "Proxy",
+  "version": "@version@",
+  "main": "fr.olten.proxy.ProxyPlugin"
+}
