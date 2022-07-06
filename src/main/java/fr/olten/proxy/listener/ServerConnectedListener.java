@@ -1,14 +1,11 @@
 package fr.olten.proxy.listener;
 
-import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.player.ServerConnectedEvent;
 import fr.olten.proxy.ProxyPlugin;
 
-import java.time.Duration;
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class ServerConnectedListener {
