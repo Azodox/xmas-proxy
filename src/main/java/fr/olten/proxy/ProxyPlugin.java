@@ -10,6 +10,7 @@ import com.velocitypowered.api.proxy.messages.ChannelIdentifier;
 import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
 import fr.olten.proxy.listener.PingListener;
 import fr.olten.proxy.listener.ServerConnectedListener;
+import fr.olten.proxy.listener.ServerPreConnectListener;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
@@ -29,7 +30,7 @@ import java.nio.file.Paths;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-@Plugin(id = "xmas-proxy", name = "Proxy", version = "0.1.0")
+@Plugin(id = "@id@", name = "@name@", version = "@version@", authors = {"Azodox_"})
 public class ProxyPlugin {
 
     private final ProxyServer server;
@@ -90,6 +91,7 @@ public class ProxyPlugin {
 
         server.getEventManager().register(this, new PingListener(this));
         server.getEventManager().register(this, new ServerConnectedListener(this));
+        server.getEventManager().register(this, new ServerPreConnectListener(this));
         server.getScheduler().buildTask(this, new Runnable() {
 
             private int i = 0;
