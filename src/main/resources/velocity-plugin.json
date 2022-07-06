@@ -2,5 +2,6 @@
   "id": "xmas-proxy",
   "name": "Proxy",
   "version": "@version@",
-  "main": "fr.olten.proxy.ProxyPlugin"
+  "main": "fr.olten.proxy.ProxyPlugin",
+  "authors": ["Azodox_"]
 }
