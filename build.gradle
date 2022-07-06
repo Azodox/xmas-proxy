@@ -4,6 +4,7 @@ plugins {
     id 'java'
     id 'idea'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'net.kyori.blossom' version '1.2.0'
 }
 
 group 'fr.azodox'
@@ -19,6 +20,13 @@ repositories {
     }
 }
 
+blossom {
+    replaceTokenIn('src/main/java/fr/olten/proxy/ProxyPlugin.java')
+    replaceToken '@version@', version
+    replaceToken '@id@', name
+    replaceToken '@name@', name
+}
+
 dependencies {
     shadow 'com.velocitypowered:velocity-api:3.1.0'
     implementation 'net.kyori:adventure-text-minimessage:4.10.1'
@@ -31,4 +39,8 @@ processResources {
         filter ReplaceTokens, tokens: [version: version]
     }
     duplicatesStrategy = 'include'
+}
+
+compileJava {
+    dependsOn processResources
 }
